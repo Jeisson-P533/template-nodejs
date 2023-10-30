@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .progress-container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 30px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar">0%</div>
+    </div>
+
+    <label><input type="checkbox" class="task" onclick="updateProgressBar()"> Tarea 1</label><br>
+    <label><input type="checkbox" class="task" onclick="updateProgressBar()"> Tarea 2</label><br>
+    <label><input type="checkbox" class="task" onclick="updateProgressBar()"> Tarea 3</label><br>
+    <label><input type="checkbox" class="task" onclick="updateProgressBar()"> Tarea 4</label><br>
+
+    <script>
+        function updateProgressBar() {
+            const checkboxes = document.querySelectorAll('.task');
+            const progressBar = document.getElementById('progress-bar');
+
+            let completedTasks = 0;
+            let totalTasks = checkboxes.length;
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    completedTasks++;
+                }
+            });
+
+            const percentComplete = (completedTasks / totalTasks) * 100;
+            progressBar.style.width = percentComplete + '%';
+            progressBar.textContent = Math.round(percentComplete) + '%';
+
+            if (completedTasks === totalTasks) {
+                alert('¡Todas las tareas están completas!');
+            }
+        }
+    </script>
+</body>
+</html>

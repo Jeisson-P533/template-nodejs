@@ -1,0 +1,33 @@
+img{
+width: 300px;
+height: 300px;
+
+}
+#img-fondo{
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+
+}
+#containar{
+
+width: 100%;
+height: auto;
+
+
+
+}
+a{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border: 10px 10px ;
+    border:1px solid black;
+   
+   
+   
+   
+   }
